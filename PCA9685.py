@@ -86,13 +86,10 @@ class PCA9685:
     def rotateServo(self, clockwise):
         print("Dispensing Gumball")
         if (clockwise):
-            for i in range(500, 2500, 10):
+            for i in range(0, 1600, 10):
                 pwm.setServoPulse(0, i)
                 time.sleep(0.02)
-        else:
-            for i in range(2500, 500, -10):
-                pwm.setServoPulse(0, i)
-                time.sleep(0.02)
+        pwm.setServoPulse(0, 0)
 
 
 if __name__ == '__main__':
